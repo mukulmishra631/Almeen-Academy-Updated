@@ -1,0 +1,305 @@
+/* ================= Global Reset & Base Styles ================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+p {
+  color: #444;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ================= Navigation Bar ================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center; /* Aligns logo and text vertically */
+    gap: 10px; /* Space between logo and text */
+  }
+  
+  .logo-container img {
+    height: 60px;
+  }
+  
+  .school-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #111;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    font-weight: 500;
+    color: #333; /* Darker gray for better contrast */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #007BFF; /* Match brand color */
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+/* ================= Sections ================ */
+section {
+  padding: 80px 20px;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Divider Line Between Sections */
+section:not(:first-of-type) {
+  border-top: 1px solid #ddd;
+}
+
+/* ================= Hero Section ================ */
+.hero {
+  background: linear-gradient(to right, #007BFF, #0056b3);
+  color: white;
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #d3c2c2;
+}
+
+/* ================= Cards / Sections Background ================ */
+.about,
+.academics,
+.cta {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 40px;
+}
+
+/* ================= Button Style ================ */
+.btn {
+  display: inline-block;
+  background: linear-gradient(to right, #007BFF, #0056b3);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #0056b3, #003f7f);
+  transform: scale(1.05);
+  color: yellow;
+}
+
+/* ================= Scroll Animations ================ */
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= Carousel Section ================ */
+.carousel-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.carousel-section h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #111;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1140px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide {
+  display: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 10px 16px;
+  margin-top: -22px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  border: none;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.next {
+  right: 10px;
+  left: auto;
+}
+
+.prev {
+  left: 10px;
+  right: auto;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots Indicator */
+.carousel-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.carousel-dots span {
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-dots span.active,
+.carousel-dots span:hover {
+  background-color: #007BFF;
+}
+
+/* ================= Footer ================ */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #eeeeee;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.site-footer p {
+  margin-bottom: 10px;
+}
+
+.site-footer .social-links a {
+  color: #00d4ff;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.site-footer .social-links a:hover {
+  color: #00ffff;
+}
+.site-footer .footer-content p{
+    color: white;
+}
