@@ -284,6 +284,71 @@ section:not(:first-of-type) {
   background-color: #007bff;
 }
 
+/* ================= Global Styles for All Pages ================ */
+
+/* Container for Centered Content */
+.container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* General Section Styling */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  position: relative;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+section p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Divider Between Sections */
+section:not(:first-of-type) {
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive Grid Layout */
+.curriculum-grid,
+.stream-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  justify-items: center;
+}
+
+.curriculum-card,
+.stream-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.curriculum-card:hover,
+.stream-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Highlight Active Link in Navbar */
+.nav-links .active {
+  color: #007BFF !important;
+  font-weight: 600;
+}
+
 /* ================= Footer ================ */
 .site-footer {
   background-color: #1a1a1a;
